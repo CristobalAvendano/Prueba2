@@ -1,0 +1,41 @@
+.botonRegistrar{
+    float:right;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-left:20px;
+    
+}
+
+.botonIngresar{
+    float:right;
+    margin-top: 2%;
+}
+
+.botonLimpiar{
+    margin-top: 8%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+}
+
+.botonFinalizar{
+    margin-top: 8%;
+    margin-bottom: 15%;
+}
+
+
+div p{
+    margin:auto;
+}
+
+.clima{
+    float:right;
+    margin-right: 2%;
+    max-width: 50%;
+    margin-top:-1%
+}
+
+.indicadores{
+    margin-left: 3%;
+    margin-top: 3.5%;
+    max-width: 50%;
+}
