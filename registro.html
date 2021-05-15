@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link type="text/css" rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body class="m-0 row justify-content-center">
+    <div>
+        <h1>FORMULARIO DE REGISTRO</h1>
+        <div class="form-group" id="FormularioBanco">
+
+            <label>Rut (*)</label>
+            <p><small id="lbl_rut" class="form-text text-danger">Debe ingresar un rut valido</small></p>
+
+            <input type="text" class="form-control" id="txt_rut">
+        </div>
+        <div class="form-group">
+
+            <label>Nombre (*)</label>
+            <p><small id="lbl_nombre" class="form-text text-danger">Debe ingresar un nombre valido</small>
+            </p>
+
+            <input type="text" class="form-control" id="txt_nombre">
+        </div>
+        <div class="form-group">
+
+            <label>Apellido Paterno (*)</label>
+            <p><small id="lbl_apellidoPat" class="form-text text-danger">Debe ingresar su apellido paterno</small></p>
+
+            <input type="text" class="form-control" id="txt_apellidoPat">
+        </div>
+        <div class="form-group">
+
+            <label>Apellido Materno (*)</label>
+            <p><small id="lbl_apellidoMat" class="form-text text-danger">Debe ingresar su apellido materno</small></p>
+
+            <input type="text" class="form-control" id="txt_apellidoMat">
+        </div>
+        <div class="form-group">
+            <label>Correo Electronico (*)</label>
+            <p><small id="lbl_correo" class="form-text text-danger">Debe ingresar un correo electronico valido</small>
+            </p>
+
+            <input type="email" name="email" class="form-control" id="txt_correo">
+        </div>
+        <label>Tipo de Cuenta (*)</label>
+        <p><small id="lbl_cuenta" class="form-text text-danger">Debe seleccionar un tipo de cuenta</small></p>
+        <select class="form-control" id="cmb_tipoCuenta">
+            <option>-- Seleccione --</option>
+            <option>Cuenta Corriente </option>
+            <option>Chequera Electronica </option>
+            <option>Cuenta de Ahorro </option>
+        </select>
+        <button type="button" class="btn btn-primary botonLimpiar">Limpiar</button></a>
+        <button type="submit" class="btn btn-success botonFinalizar"
+            onclick="fn_correoVacio(),fn_apellidoMatVacio(),fn_apellidoPatVacio(),fn_nombreVacio(),fn_validarRut(),fn_cuentaVacia();">Finalizar
+            Registro</button>
+    </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+<script src='js/script.js'></script>
+
+</html>
