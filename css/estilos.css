@@ -3,7 +3,6 @@
     margin-right: 5%;
     margin-top: 2%;
     margin-left:20px;
-    
 }
 
 .botonIngresar{
@@ -28,14 +27,34 @@ div p{
 }
 
 .clima{
-    float:right;
-    margin-right: 2%;
-    max-width: 50%;
-    margin-top:-1%
+   float:right;
+   margin-right: 3%;
+   margin-top: -1.8%;
 }
 
 .indicadores{
     margin-left: 3%;
     margin-top: 3.5%;
-    max-width: 50%;
+    
+}
+
+.imgBanco{
+    display: block;
+    margin-left: 18%;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    width: 50%;
+}
+
+.textoBanco{
+    font-size:xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 10%;
+    padding-left: 18%;
+}
+
+.botonInicio{
+    margin-left: 45%;
+    margin-top:10%;
 }
