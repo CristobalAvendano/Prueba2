@@ -13,63 +13,95 @@
 
 <body class="m-0 row justify-content-center">
     <div>
-        <h1>FORMULARIO DE REGISTRO</h1>
-        <div class="form-group" id="FormularioBanco">
+        <form>
+            <h1>FORMULARIO DE REGISTRO</h1>
+            <div class="form-group" id="FormularioBanco">
 
-            <label>Rut (*)</label>
-            <p><small id="lbl_rut" class="form-text text-danger">Debe ingresar un rut valido</small></p>
+                <label>Rut (*)</label>
+                <p><small id="lbl_rut" class="form-text text-danger">Debe ingresar un rut valido</small></p>
 
-            <input type="text" class="form-control" id="txt_rut">
-        </div>
-        <div class="form-group">
+                <input type="text" class="form-control" id="txt_rut">
+            </div>
+            <div class="form-group">
 
-            <label>Nombre (*)</label>
-            <p><small id="lbl_nombre" class="form-text text-danger">Debe ingresar un nombre valido</small>
-            </p>
+                <label>Nombre (*)</label>
+                <p><small id="lbl_nombre" class="form-text text-danger">Debe ingresar un nombre valido</small>
+                </p>
 
-            <input type="text" class="form-control" id="txt_nombre">
-        </div>
-        <div class="form-group">
+                <input type="text" class="form-control" id="txt_nombre">
+            </div>
+            <div class="form-group">
 
-            <label>Apellido Paterno (*)</label>
-            <p><small id="lbl_apellidoPat" class="form-text text-danger">Debe ingresar su apellido paterno</small></p>
+                <label>Apellido Paterno (*)</label>
+                <p><small id="lbl_apellidoPat" class="form-text text-danger">Debe ingresar su apellido paterno</small>
+                </p>
 
-            <input type="text" class="form-control" id="txt_apellidoPat">
-        </div>
-        <div class="form-group">
+                <input type="text" class="form-control" id="txt_apellidoPat">
+            </div>
+            <div class="form-group">
 
-            <label>Apellido Materno (*)</label>
-            <p><small id="lbl_apellidoMat" class="form-text text-danger">Debe ingresar su apellido materno</small></p>
+                <label>Apellido Materno (*)</label>
+                <p><small id="lbl_apellidoMat" class="form-text text-danger">Debe ingresar su apellido materno</small>
+                </p>
 
-            <input type="text" class="form-control" id="txt_apellidoMat">
-        </div>
-        <div class="form-group">
-            <label>Correo Electronico (*)</label>
-            <p><small id="lbl_correo" class="form-text text-danger">Debe ingresar un correo electronico valido</small>
-            </p>
-
-            <input type="email" name="email" class="form-control" id="txt_correo">
-        </div>
-        <label>Tipo de Cuenta (*)</label>
-        <p><small id="lbl_cuenta" class="form-text text-danger">Debe seleccionar un tipo de cuenta</small></p>
-        <select class="form-control" id="cmb_tipoCuenta">
-            <option>-- Seleccione --</option>
-            <option>Cuenta Corriente </option>
-            <option>Chequera Electronica </option>
-            <option>Cuenta de Ahorro </option>
-        </select>
-        <button type="button" class="btn btn-primary botonLimpiar">Limpiar</button></a>
-        <button type="submit" class="btn btn-success botonFinalizar"
-            onclick="fn_correoVacio(),fn_apellidoMatVacio(),fn_apellidoPatVacio(),fn_nombreVacio(),fn_validarRut(),fn_cuentaVacia();">Finalizar
-            Registro</button>
+                <input type="text" class="form-control" id="txt_apellidoMat">
+            </div>
+            <div class="form-group">
+                <label>Correo Electronico (*)</label>
+                <input type="email" class="form-control" id="txt_correo">
+                <p><small id="lbl_correo" class="form-text text-danger">Debe ingresar un correo electronico
+                        valido</small>
+            </div>
+            <label>Tipo de Cuenta (*)</label>
+            <p><small id="lbl_cuenta" class="form-text text-danger">Debe seleccionar un tipo de cuenta</small></p>
+            <select class="form-control" id="cmb_tipoCuenta">
+                <option>-- Seleccione --</option>
+                <option>Cuenta Corriente </option>
+                <option>Chequera Electronica </option>
+                <option>Cuenta de Ahorro </option>
+            </select>
+            <button type="button" class="btn btn-primary botonLimpiar" onclick="fn_limpiarForm();">Limpiar</button>
+            <button type="button" class="btn btn-success botonFinalizar"
+                onclick="fn_correoVacio(),fn_apellidoMatVacio(),fn_apellidoPatVacio(),fn_nombreVacio(),fn_validarRut(),fn_cuentaVacia(),fn_redireccion();">Finalizar
+                Registro</button>
+        </form>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalConteo" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalConteo">Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="txt_usuario">Usuario registrado correctamente!</p>
+                    <p> </p>
+                    <p id="txt_conteo"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelarConteo" data-dismiss="modal">Mantenerse
+                        en la
+                        pagina</button>
+                    <a href='index.html'><button type="button" class="btn btn-primary">Ir al inicio</button></a>
+                </div>
+            </div>
+        </div>
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src='js/script.js'></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"></script>
-<script src='js/script.js'></script>
+
 
 </html>
