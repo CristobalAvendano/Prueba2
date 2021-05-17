@@ -162,16 +162,16 @@ function fn_validarRut() {
 
     $.getJSON('https://api.libreapi.cl/rut/validate' + '?rut=' + rut, function (data) {
         var validador = false;
-        console.log(data)
+        /*console.log(data)*/
         var respuesta = data;
         if (respuesta.status = "success" && respuesta.data.valid == true) {
             validador = respuesta.data.valid;
             validador = true;
-            console.log(validador + ' ENTRE AL IF Y SOY VERDADERO ' + respuesta.data.valid);
+            /*console.log(validador + ' ENTRE AL IF Y SOY VERDADERO ' + respuesta.data.valid);*/
         }
         else {
             validador = false;
-            console.log(validador + ' ENTRE AL ELSE Y SOY FALSO ' + respuesta.data.valid);
+            /*console.log(validador + ' ENTRE AL ELSE Y SOY FALSO ' + respuesta.data.valid);*/
         }
 
         if (validador == true) {
@@ -188,7 +188,7 @@ function fn_validarRut() {
             $('#txt_rut').addClass('is-invalid');
             validador = false;
         }
-        console.log(validador + ' SOY EL VALIDADOR DEL RUT')
+        /* console.log(validador + ' SOY EL VALIDADOR DEL RUT')*/
 
         /* REDIRECCION A LA PAGINA DE INICIO CUANDO LOS DATOS INGRESADOS SON CORRECTOS */
         function fn_redireccion() {
@@ -199,7 +199,7 @@ function fn_validarRut() {
             var apellidoMat = $('#txt_apellidoMat').val();
             var correo = $('#txt_correo').val();
             var cuenta = $('#cmb_tipoCuenta option:selected').text();
-            console.log(rut + ' SOY EL VALIDADOR DE REDIRECCION')
+            /*console.log(rut + ' SOY EL VALIDADOR DE REDIRECCION')*/
             var conteo = setInterval(function () {
                 if (nombre != "" && apellidoPat != "" && apellidoMat != "" && correo != "" && rut == true && cuenta != "-- Seleccione --") {
                     $('#modalConteo').modal('show');
@@ -211,6 +211,7 @@ function fn_validarRut() {
                     }
                     else if ($("#cancelarConteo").click(function () {
                         clearInterval(conteo);
+                        $('#modalConteo').modal('hide');
                     }))
                         segundos--;
                 }
